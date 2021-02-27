@@ -1,9 +1,9 @@
 package controller
 
 import (
-	"MusicLibary/common"
-	"MusicLibary/model"
-	"MusicLibary/untils"
+	"MusicLibrary/common"
+	"MusicLibrary/model"
+	"MusicLibrary/untils"
 	"crypto/sha512"
 	"encoding/hex"
 	"log"
@@ -38,6 +38,10 @@ func Register(ctx *gin.Context) {
 	name := requestUser.Name
 	mail := requestUser.Mail
 	password := requestUser.Password
+	if !(len(mail) > 0 && len(password) > 0 && len(name) > 0) {
+		common.Response(ctx, http.StatusUnprocessableEntity, 422, nil, "请输入全部信息")
+		return
+	}
 	// Verify
 	if !untils.VerifyMail(mail) {
 		common.Response(ctx, http.StatusUnprocessableEntity, 422, nil, "邮箱格式不正确")

@@ -1,7 +1,7 @@
 package common
 
 import (
-	"MusicLibary/model"
+	"MusicLibrary/model"
 
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"

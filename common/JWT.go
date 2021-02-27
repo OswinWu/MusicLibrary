@@ -1,7 +1,7 @@
 package common
 
 import (
-	"MusicLibary/model"
+	"MusicLibrary/model"
 	"time"
 
 	jwt "github.com/dgrijalva/jwt-go"
@@ -21,8 +21,8 @@ func ReleaseToken(user model.User) (string, error) {
 		StandardClaims: jwt.StandardClaims{
 			ExpiresAt: expirationTime.Unix(),
 			IssuedAt:  time.Now().Unix(),
-			Issuer:    "MusicLibary",
-			Subject:   "user token",
+			Issuer:    "MusicLibrary",
+			Subject:   "User Token",
 		},
 	}
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)

@@ -1,4 +1,4 @@
-module MusicLibary
+module MusicLibrary
 
 go 1.16
 

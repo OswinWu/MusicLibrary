@@ -1,7 +1,7 @@
 package main
 
 import (
-	"MusicLibary/controller"
+	"MusicLibrary/controller"
 
 	"github.com/gin-gonic/gin"
 )
